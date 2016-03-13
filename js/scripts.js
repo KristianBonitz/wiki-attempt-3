@@ -1,9 +1,9 @@
 $(document).ready(function($){
 	$(".search").click(function() {
-		var query = $(".searchForm").text();
+		var query = $(".searchForm").val();
 		if(query !== ""){
 
-			$($.getJSON('https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch='
+			$.getJSON('https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch='
 			+ query + '&srlimit=100', function(json) {
 				var html = "";
 
@@ -14,7 +14,7 @@ $(document).ready(function($){
 				};
 
 				$(".debug").html(html);
-			});)
+			});
 		}
 	});
 });
