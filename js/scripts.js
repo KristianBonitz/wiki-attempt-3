@@ -1,5 +1,5 @@
 $(document).ready(function($){
-	$(".search").click(function() {
+	$(".searchbutton").click(function() {
 		var query = $(".searchForm").val();
 		if(query !== ""){
 
@@ -24,7 +24,7 @@ $(document).ready(function($){
 				console.log("success");
 
 				var html = "";
-				for (var i = json.query.search .length - 1; i >= 0; i--) {
+				for (var i = 0; i < json.query.search .length; i++) {
 					html += json.query.search[i].title;
 					html += "<br>" + json.query.search[i].snippet
 					html += "<br><br>";
@@ -32,18 +32,13 @@ $(document).ready(function($){
 
 				$(".debug").html(html);
 			})
+
 			.fail(function() {
 				console.log("error");
 			})
 			.always(function() {
 				console.log("complete");
 			});
-			/*
-			$.getJSON('https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch='
-			+ query + '&srlimit=100', function(json) {
-				
-			});
-			*/
 		}
 	});
 });
