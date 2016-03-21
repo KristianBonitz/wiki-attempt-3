@@ -41,4 +41,9 @@ $(document).ready(function($){
 			});
 		}
 	});
+
+	$(".article_1").click(function() {
+  		window.location = $(this).data("https://en.wikipedia.org/wiki/Pizza");
+});
+
 });

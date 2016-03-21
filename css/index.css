@@ -26,8 +26,11 @@
 
 }
 
+div[class^="article_"]{
+	border: solid;
+}
 
 
 .debug{
-	font-size: 8pt;
+	font-size: 6pt;
 }
